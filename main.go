@@ -43,4 +43,17 @@ func main() {
 	middleInit = "N";
 	//The value of the pointer 'ptr' changes, but the memory address doesn't. The 'middleInit' variable is still in the same location
 	fmt.Println(ptr, *ptr);
+
+	//Constants have to be initialized when they are declared
+	//Value of a constant has to be able to be determined at 'compile time'. Can't assign it to a return value of a function that gets evaluated at 'runtime'
+	const pi = 3.1415
+	fmt.Println(pi)
+
+	//Go will dynamically interpret the type of a constant, unless the constant's type is specified
+	const d = 3;
+	fmt.Println(d + 3);
+	fmt.Println(d + 1.2);
+
+	const e int = 3;
+	fmt.Println(float32(e) + 1.5);
 }
