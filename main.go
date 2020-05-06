@@ -77,4 +77,14 @@ func main() {
 
 	//from constant block
 	fmt.Println(first, second, third, fourth, fifth, sixth, seventh, eigth);
+
+	//all elements in an array must be the same type
+	var arr [3]int;
+	arr[0] = 1;
+	arr[1] = 2;
+	arr[2] = 3;
+	fmt.Println(arr);
+
+	arr1 := [3]int{4, 5, 6}
+	fmt.Println(arr1);
 }
