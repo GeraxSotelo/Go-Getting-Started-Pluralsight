@@ -4,6 +4,24 @@ import (
 	"fmt"
 )
 
+//constant block
+const (
+	first = 1;
+	second = "second";
+	//Every time iota is reused it increments its value by one. Long chains of constants can be built and the values of the constants will change.
+	third = iota;
+	fourth = iota;
+	fifth = iota + 2;
+	sixth = 2 << iota; //bit shift
+	//If a value is not specified for a constant below another constant, it'll reuse the constant expression above it
+	seventh
+)
+
+const (
+	//iota will reset in a new constant block
+	eigth = iota;
+)
+
 func main() {
 	//Initialize in separate lines. var keyword, variable name, type
 	var a int;
@@ -56,4 +74,7 @@ func main() {
 
 	const e int = 3;
 	fmt.Println(float32(e) + 1.5);
+
+	//from constant block
+	fmt.Println(first, second, third, fourth, fifth, sixth, seventh, eigth);
 }
