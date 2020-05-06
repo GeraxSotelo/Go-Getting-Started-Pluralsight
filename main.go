@@ -87,4 +87,30 @@ func main() {
 
 	arr1 := [3]int{4, 5, 6}
 	fmt.Println(arr1);
+
+	//A colon in the square brackets of an array creates a slice of that array from the beginning of the array to the end of it.
+	sliceArr := arr1[:];
+	fmt.Println(arr1, sliceArr);
+
+	//The slice is pointing to the data that the array is keeping
+	//Any changes made to the array are going to be reflected in the slice, and any changes made in the slice are going to be reflected back to the underlying array.
+	//still bound to a fixed sized array
+	arr1[1] = 10;
+	sliceArr[2] = 15;
+	fmt.Println(arr1, sliceArr);
+
+	//A slice is not a fixed size entity
+	//Go will automatically resize the underlying array by creating a new array & having the slice point to it
+	 sliceArr2 := []int{1, 2, 3}
+	 fmt.Println(sliceArr2)
+	 sliceArr2 = append(sliceArr2, 4, 5);
+	 fmt.Println(sliceArr2);
+
+	 //Creates a slice of SliceArr2 starting from index 1 to the end
+	 sliceArr3 := sliceArr2[1:];
+	 //Creates a slice of SliceArr2 starting from index 0 up to & not including index 2
+	 sliceArr4 := sliceArr2[:2];
+	 //Creates a slice of SliceArr2 starting from index 1 up to & not including index 2
+	 sliceArr5 := sliceArr2[1:2];
+	 fmt.Println(sliceArr3, sliceArr4, sliceArr5);
 }
