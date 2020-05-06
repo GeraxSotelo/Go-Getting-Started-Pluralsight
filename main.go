@@ -114,11 +114,31 @@ func main() {
 	 sliceArr5 := sliceArr2[1:2];
 	 fmt.Println(sliceArr3, sliceArr4, sliceArr5);
 
-	//string key, int value
+	//keys are of type string, values are of type int
 	 myMap := map[string]int{"foo":42}
 	 fmt.Println(myMap);
 	 fmt.Println(myMap["foo"]);
 	 
 	 delete(myMap, "foo");
 	 fmt.Println(myMap);
+
+	 //Define a type called 'user'. That user type is going to be a struct
+	 type user struct {
+		ID int
+		FirstName string
+		LastName string
+	 }
+
+	 var u user;
+	 u.ID = 1;
+	 u.FirstName = "Gerax"
+	 u.LastName = "Sotelo"
+	 fmt.Println(u);
+
+	 //Must end final line with a comma or a closing curly brace, or else Go will add a semicolon
+	 u2 := user{ ID: 1, 
+		FirstName: "Gerax", 
+		LastName: "Sotelo",
+	}
+	 fmt.Println(u2);
 }
