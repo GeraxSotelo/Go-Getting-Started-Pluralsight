@@ -113,4 +113,12 @@ func main() {
 	 //Creates a slice of SliceArr2 starting from index 1 up to & not including index 2
 	 sliceArr5 := sliceArr2[1:2];
 	 fmt.Println(sliceArr3, sliceArr4, sliceArr5);
+
+	//string key, int value
+	 myMap := map[string]int{"foo":42}
+	 fmt.Println(myMap);
+	 fmt.Println(myMap["foo"]);
+	 
+	 delete(myMap, "foo");
+	 fmt.Println(myMap);
 }
