@@ -1,6 +1,8 @@
+//package main specifies an entry point for the application
 package main
 
 import (
+	"github.com/pluralsight/go-gettingstarted/webservice/models"
 	"fmt"
 )
 
@@ -23,6 +25,15 @@ const (
 )
 
 func main() {
+	u := models.User {
+		ID: 2,
+		FirstName: "Christa",
+		LastName: "Sotelo",
+	}
+	fmt.Println(u);
+}
+
+func notes() {
 	//Initialize in separate lines. var keyword, variable name, type
 	var a int;
 	a = 42
