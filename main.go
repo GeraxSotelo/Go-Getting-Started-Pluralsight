@@ -4,6 +4,7 @@ package main
 import (
 	"github.com/pluralsight/go-gettingstarted/webservice/models"
 	"fmt"
+	"errors"
 )
 
 //constant block
@@ -31,6 +32,31 @@ func main() {
 		LastName: "Sotelo",
 	}
 	fmt.Println(u);
+
+	fmt.Println(testFunction(1, 2, 3));
+	fmt.Println(testErrorFunc());
+	num, err := testMultipleReturnFunc(5);
+	fmt.Println(num, err);
+	//can use a write-only variable, which is an underscore.
+	//Allows you to dump data into it without having to use it, so you don't get an error for an unused variable
+	_, err1 :=  testMultipleReturnFunc(10);
+	fmt.Println(err1);
+}
+
+//if all params are the same type, can pass in data type once
+//return type comes after parenthesis 
+func testFunction(num1, num2, num3 int) bool {
+	fmt.Println(num1);
+	return true;
+}
+
+func testErrorFunc() error {
+	return errors.New("Something is wrong");
+}
+
+//multiple returns
+func testMultipleReturnFunc(num1 int) (int, error) {
+	return num1, nil;
 }
 
 func notes() {
