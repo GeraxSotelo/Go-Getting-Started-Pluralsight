@@ -2,7 +2,8 @@
 package main
 
 import (
-	"github.com/pluralsight/go-gettingstarted/webservice/models"
+	"net/http"
+	"github.com/pluralsight/go-gettingstarted/webservice/controllers"
 	"fmt"
 	"errors"
 )
@@ -26,12 +27,12 @@ const (
 )
 
 func main() {
-	u := models.User {
-		ID: 2,
-		FirstName: "Christa",
-		LastName: "Sotelo",
-	}
-	fmt.Println(u);
+	//register routing
+	controllers.RegisterControllers();
+	//http server
+	//use nil to use the dfault ServeMux
+	http.ListenAndServe(":3000", nil);
+
 
 	fmt.Println(testFunction(1, 2, 3));
 	fmt.Println(testErrorFunc());
