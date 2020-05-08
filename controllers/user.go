@@ -13,6 +13,8 @@ type userController struct {
 //type to bind to - userController
 //method name - ServeHTTP. Requires a ResponseWriter object from the HTTP package and it's going to receive a Request object
 func (uc userController) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+//Because our built controller has a method ServeHTTP (same name as handler interface), & receives a ResponseWriter & a pointer to a Request object as parameters, it automatically implements the handler interface. We don't need to specify that we're explicitly implementing that interface
+
 	//convert string to byte slice
 	w.Write([]byte("Hello from User Controller"));
 }
