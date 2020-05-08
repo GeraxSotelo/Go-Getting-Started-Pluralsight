@@ -152,7 +152,7 @@ func notes() {
 	 sliceArr5 := sliceArr2[1:2];
 	 fmt.Println(sliceArr3, sliceArr4, sliceArr5);
 
-	//keys are of type string, values are of type int
+	 //keys are of type string, values are of type int
 	 myMap := map[string]int{"foo":42}
 	 fmt.Println(myMap);
 	 fmt.Println(myMap["foo"]);
@@ -174,9 +174,60 @@ func notes() {
 	 fmt.Println(u);
 
 	 //Must end final line with a comma or a closing curly brace, or else Go will add a semicolon
-	 u2 := user{ ID: 1, 
+	 u2 := user { ID: 1, 
 		FirstName: "Gerax", 
 		LastName: "Sotelo",
-	}
+	 }
 	 fmt.Println(u2);
+
+	 //Loop till condition construct
+	 var num int
+	 for num < 5 {
+		 println(num);
+		 num++;
+	 }
+
+	 //Loop till condition with a post clause
+	 //has to have 3 terms in the for loop to indicate to the compiler that this is a loop till condition with a post clause
+	 for num := 0; num < 5; num++ {
+		 println(num);
+	 }
+
+	 //Infinite loop
+	 var num2 int
+	 for { // instead of for ; ; {
+		 if i == 5 {
+			 break;
+		 }
+		 println(num2);
+		 num2++;
+	 }
+
+	 //Looping over collections
+	 loopingSlice := []int{1, 2, 3};
+	 for i := 0; i < len(loopingSlice); i++ {
+		 println(loopingSlice[i]);
+	 }
+	 //SAME THING
+	 //use (i) indexer & (v) value. Set them equal to the 'range' keyword followed by the collection being iterated over.
+	 //The 'range' keyword tells the compiler that we're passing in a collection type & then it returns out the index in the 1st variable that gets returned & the value at that index in the 2nd variable that's returned
+	 for i, v := range loopingSlice {
+		println(i, v);
+	 }
+
+	 wellKnownPorts := map[string]int {"http": 80, "https": 443}
+	 for k, v := range wellKnownPorts {
+		println(k, v);
+	 }
+	 //ignore the second value
+	 wellKnownPorts2 := map[string]int {"http": 80, "https": 443}
+	 for k := range wellKnownPorts2 {
+		println(k);
+	 }
+	 //ignore the first value
+	 wellKnownPorts3 := map[string]int {"http": 80, "https": 443}
+	 for _, v := range wellKnownPorts3 {
+		println(v);
+	 }
+
 }
