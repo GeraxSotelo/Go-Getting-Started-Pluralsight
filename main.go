@@ -242,4 +242,22 @@ func notes() {
 	 } else if number1 > number2 {
 		println("first number is greater");
 	 }
+
+	 //Switch statements
+	 //In Go, you don't need a 'break' statement after each case. It has implicit breaking. Each case is implicitly separated one from another.
+	 //If you want to fall from one case to the next, you can provide a 'fallthrough' statement.
+	 age := 20;
+	 switch age {
+	 case 10:
+		println("Too young");
+	 case 15:
+		println("Too young");
+	 case 20:
+		println("Too young");
+		fallthrough; //falls through to the next case.
+	 case 21:
+		println("Old enough");
+	 default:
+		println("default message");
+	 }
 }
