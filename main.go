@@ -204,6 +204,7 @@ func notes() {
 	 }
 
 	 //Looping over collections
+	 //loop over a slice
 	 loopingSlice := []int{1, 2, 3};
 	 for i := 0; i < len(loopingSlice); i++ {
 		 println(loopingSlice[i]);
@@ -214,7 +215,7 @@ func notes() {
 	 for i, v := range loopingSlice {
 		println(i, v);
 	 }
-
+	 //loop over a map
 	 wellKnownPorts := map[string]int {"http": 80, "https": 443}
 	 for k, v := range wellKnownPorts {
 		println(k, v);
@@ -230,4 +231,15 @@ func notes() {
 		println(v);
 	 }
 
+	 //a panic is similar to an exception in other languages
+	 // panic("Uh oh. Something went wrong.");
+
+	 //if statement
+	 number1 := 5;
+	 number2 := 5;
+	 if number1 == number2 {
+		 println("numbers are equal");
+	 } else if number1 > number2 {
+		println("first number is greater");
+	 }
 }
