@@ -29,7 +29,7 @@ func GetUsers() []*User {
 }
 
 //AddUser returns 2 values, the User created and a potential error object
-func AddUser (u User) (User, error) {
+func AddUser(u User) (User, error) {
 	if u.ID != 0 {
 		//Expecting a User value to be returned. We can return an empty User object. Can't return nil because we're not returning a pointer value 
 		return User{}, errors.New("New User must not include id or it must be set to zero");
